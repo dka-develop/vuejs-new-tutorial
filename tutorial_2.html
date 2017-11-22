@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tutorial #1</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <div id="dka">
+      <h1 @click="tutialDemo">DKA-DEVELOP Tutorial {{counter}}</h1>
+      <form class="border m-2 p-4" :class="typeJob == 'list' ? 'border-primary' : 'border-danger'">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <div class="form-group">
+              <input type="radio" name="type" autocomplete="off" v-model="typeJob" value="list" :checked="typeJob == 'list'"> Список каналов
+              <input type="radio" name="type" autocomplete="off" v-model="typeJob" value="search" :checked="typeJob == 'search'"> Поиск
+            </div>
+
+          </div>
+        </div>
+      </form>
+      <a href="#" @click="tutialDemo">Нажми меня</a>
+      {{ typeJob }}
+      <label for="" title="getDate">Проверка времени</label>
+    </div>
+  </body>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/vue"></script>
+
+<script type="text/javascript">
+var app = new Vue({
+  el: '#dka',
+  data: {
+    message: 'Hello Vue!',
+    getDate: 'Текущее время: ' + new Date().toLocaleString(),
+    typeJob: 'list',
+    counter: 0
+  },
+  methods: {
+    tutialDemo: function() {
+      this.counter++
+    }
+  }
+})
+</script>
+</html>
