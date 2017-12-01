@@ -8,19 +8,18 @@
   </head>
   <body>
     <div id="dka">
-      <h1 @click="tutialDemo">DKA-DEVELOP Tutorial {{counter}}</h1>
+      <h1 @click="tutorialDemo">DKA-DEVELOP Tutorial #{{counter}}</h1>
       <form class="border m-2 p-4" :class="typeJob == 'list' ? 'border-primary' : 'border-danger'">
         <div class="form-row">
           <div class="form-group col-md-6">
             <div class="form-group">
-              <input type="radio" name="type" autocomplete="off" v-model="typeJob" value="list" :checked="typeJob == 'list'"> Список каналов
-              <input type="radio" name="type" autocomplete="off" v-model="typeJob" value="search" :checked="typeJob == 'search'"> Поиск
+              <input type="radio" name="type" v-model="typeJob" value="list" :checked="typeJob == 'list'"> Список каналов
+              <input type="radio" name="type" v-model="typeJob" value="search" :checked="typeJob == 'search'"> Поиск
             </div>
-
           </div>
         </div>
       </form>
-      <a href="#" @click="tutialDemo">Нажми меня</a>
+      <a href="#" @click="tutorialDemo">Нажми меня</a>
       {{ typeJob }}
       <label for="" title="getDate">Проверка времени</label>
     </div>
@@ -40,7 +39,7 @@ var app = new Vue({
     counter: 0
   },
   methods: {
-    tutialDemo: function() {
+    tutorialDemo: function() {
       this.counter++
     }
   }
